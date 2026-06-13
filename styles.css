@@ -278,8 +278,17 @@ footer {
   .section { padding: 2.5rem 1.25rem; }
 }
  
+/* ── EMPTY STATES ──────────────────────────────────────── */
+.empty-state {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  padding: 1.5rem 0;
+}
+ 
 /* ── REDUCED MOTION ────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
   html { scroll-behavior: auto; }
 }
+ 
