@@ -1,0 +1,285 @@
+/* ── TOKENS ────────────────────────────────────────────── */
+:root {
+  --green:       #2D5016;   /* Bishop Manogue / Sierra pine */
+  --green-light: #4A7C2F;   /* hover state */
+  --green-mist:  #EEF3E8;   /* subtle background tint */
+  --ink:         #1A1A18;   /* near-black text */
+  --ink-soft:    #5A5A54;   /* secondary text */
+  --paper:       #FAFAF7;   /* warm off-white */
+  --rule:        #E0E0D8;   /* dividers */
+ 
+  --font-display: 'EB Garamond', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+ 
+  --max-w: 680px;
+  --gap:   2rem;
+}
+ 
+/* ── RESET ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+ 
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+ 
+/* ── NAV ───────────────────────────────────────────────── */
+header {
+  position: sticky;
+  top: 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  z-index: 100;
+}
+ 
+nav {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ 
+.nav-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--green);
+  letter-spacing: 0.01em;
+}
+ 
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+ 
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+ 
+.nav-links a:hover { color: var(--green); }
+ 
+/* ── HERO ──────────────────────────────────────────────── */
+.hero {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 5rem 1.5rem 4rem;
+}
+ 
+.hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 1.2rem;
+}
+ 
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+ 
+.hero-sub {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+ 
+/* ── SECTIONS ──────────────────────────────────────────── */
+.section {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+ 
+.section h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
+ 
+/* ── ABOUT ─────────────────────────────────────────────── */
+.about p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+ 
+/* ── ESSAYS ────────────────────────────────────────────── */
+.essay-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+ 
+.essay-item {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+ 
+.essay-date {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  padding-top: 0.2rem;
+  font-variant-numeric: tabular-nums;
+}
+ 
+.essay-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.3rem;
+  transition: color 0.2s;
+}
+ 
+.essay-title:hover { color: var(--green); }
+ 
+.essay-desc {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+ 
+/* ── PROJECTS ──────────────────────────────────────────── */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+ 
+.project-item {
+  padding: 1.4rem 1.5rem;
+  background: var(--green-mist);
+  border-radius: 6px;
+  border-left: 3px solid var(--green);
+}
+ 
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+ 
+.project-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+ 
+.project-link {
+  font-size: 1.1rem;
+  color: var(--green);
+  text-decoration: none;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+ 
+.project-link:hover { transform: translate(2px, -2px); }
+ 
+.project-desc {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.8rem;
+}
+ 
+.project-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+ 
+.tag {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--green);
+  background: white;
+  border: 1px solid var(--green);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+ 
+/* ── CONTACT ───────────────────────────────────────────── */
+.contact p {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.5rem;
+}
+ 
+.contact-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+ 
+.contact-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--green);
+  text-decoration: none;
+  border-bottom: 1px solid var(--green);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+ 
+.contact-links a:hover {
+  color: var(--green-light);
+  border-color: var(--green-light);
+}
+ 
+/* ── FOOTER ────────────────────────────────────────────── */
+footer {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+ 
+/* ── MOBILE ────────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .nav-links { gap: 1rem; }
+ 
+  .essay-item {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+ 
+  .hero { padding: 3rem 1.25rem 2.5rem; }
+  .section { padding: 2.5rem 1.25rem; }
+}
+ 
+/* ── REDUCED MOTION ────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+  html { scroll-behavior: auto; }
+}
