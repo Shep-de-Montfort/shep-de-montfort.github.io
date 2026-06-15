@@ -15,10 +15,10 @@
     <nav>
       <span class="nav-name">Shep de Montfort</span>
       <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#essays">Essays</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+       <a href="#about">About</a>
+       <a href="#projects">Projects</a>
+       <a href="#reflections">Reflections</a>
+       <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
@@ -29,7 +29,7 @@
     <section class="hero">
       <p class="hero-eyebrow">Lifelong learner</p>
       <h1>I don't know much about anything, but I'd like to!</h1>
-      <p class="hero-sub">If you are reading this, I hope it is because I did something cool.</p>
+      <p class="hero-sub">My passions include leadership, conversations, and teaching</p>
     </section>
  
     <!-- ABOUT -->
@@ -40,50 +40,35 @@
       </p>
     </section>
  
-    <!-- ESSAYS -->
-    <section id="essays" class="section">
-      <h2>Essays</h2>
-      <div class="essay-list">
- 
-        <!-- ADD ESSAYS BELOW. To add one, copy this block:
-        <article class="essay-item">
-          <span class="essay-date">Mon YYYY</span>
-          <div>
-            <a href="your-essay-file.html" class="essay-title">Your Title</a>
-            <p class="essay-desc">One sentence about what it's about.</p>
-          </div>
-        </article>
-        -->
- 
-        <div class="empty-state">
-          Nothing here yet. Check back soon.
-        </div>
- 
-      </div>
-    </section>
- 
-    <!-- PROJECTS -->
+   <!-- PROJECTS -->
     <section id="projects" class="section">
       <h2>Projects</h2>
       <div class="project-list">
- 
-        <!-- ADD PROJECTS BELOW. To add one, copy this block:
-        <div class="project-item">
-          <div class="project-header">
-            <span class="project-name">Project Name</span>
-            <a href="https://your-link.com" class="project-link">↗</a>
-          </div>
-          <p class="project-desc">One sentence on what it is and why you built it.</p>
-          <div class="project-tags">
-            <span class="tag">Tag</span>
-          </div>
-        </div>
-        -->
- 
+
         <div class="empty-state">
           Nothing here yet. Working on it.
         </div>
- 
+
+      </div>
+    </section>
+
+    <!-- REFLECTIONS -->
+    <section id="reflections" class="section">
+      <h2>Reflections</h2>
+      <div class="reflection-list">
+
+        <article class="reflection-item">
+          <span class="reflection-date">Jun 2026</span>
+          <div>
+            <a href="reflections/failure.html" class="reflection-title">Failure</a>
+            <p class="reflection-desc">What a healthy relationship with failure should look like.</p>
+          </div>
+        </article>
+
+        <div class="empty-state">
+          Nothing here yet. Check back soon.
+        </div>
+
       </div>
     </section>
  
@@ -102,6 +87,12 @@
   <footer>
     <span>"As far back as I can remember, I've always wanted to be a gangster." — Henry Hill</span>
   </footer>
- 
+<script>
+  const reflections = document.querySelectorAll('.reflection-item');
+  const emptyState = document.querySelector('#reflections .empty-state');
+  if (reflections.length > 0) {
+    emptyState.style.display = 'none';
+  }
+</script> 
 </body>
 </html>

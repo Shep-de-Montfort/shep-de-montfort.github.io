@@ -1,8 +1,8 @@
 /* ── TOKENS ────────────────────────────────────────────── */
 :root {
-  --green:       #2D5016;   /* Bishop Manogue / Sierra pine */
-  --green-light: #4A7C2F;   /* hover state */
-  --green-mist:  #EEF3E8;   /* subtle background tint */
+  --green:       #1B6B2F;   /* Bishop Manogue / Sierra pine */
+  --green-light: #238A3C;   /* hover state */
+  --green-mist:  #E8F3EB;   /* subtle background tint */
   --ink:         #1A1A18;   /* near-black text */
   --ink-soft:    #5A5A54;   /* secondary text */
   --paper:       #FAFAF7;   /* warm off-white */
@@ -125,28 +125,28 @@ nav {
   line-height: 1.8;
 }
  
-/* ── ESSAYS ────────────────────────────────────────────── */
-.essay-list {
+/* ── REFLECTIONS ────────────────────────────────────────────── */
+.reflection-list {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
  
-.essay-item {
+.reflection-item {
   display: grid;
   grid-template-columns: 5rem 1fr;
   gap: 1rem;
   align-items: start;
 }
  
-.essay-date {
+.reflection-date {
   font-size: 0.78rem;
   color: var(--ink-soft);
   padding-top: 0.2rem;
   font-variant-numeric: tabular-nums;
 }
  
-.essay-title {
+.reflection-title {
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 500;
@@ -157,9 +157,9 @@ nav {
   transition: color 0.2s;
 }
  
-.essay-title:hover { color: var(--green); }
+.reflection-title:hover { color: var(--green); }
  
-.essay-desc {
+.reflection-desc {
   font-size: 0.88rem;
   color: var(--ink-soft);
   line-height: 1.6;
@@ -269,7 +269,7 @@ footer {
 @media (max-width: 520px) {
   .nav-links { gap: 1rem; }
  
-  .essay-item {
+  .reflection-item {
     grid-template-columns: 1fr;
     gap: 0.3rem;
   }
