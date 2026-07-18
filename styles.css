@@ -169,61 +169,136 @@ nav {
 .project-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
  
 .project-item {
-  padding: 1.4rem 1.5rem;
-  background: var(--green-mist);
-  border-radius: 6px;
-  border-left: 3px solid var(--green);
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+ 
+.project-date {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  padding-top: 0.2rem;
+  font-variant-numeric: tabular-nums;
 }
  
 .project-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
 }
  
 .project-name {
   font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 500;
-}
- 
-.project-link {
   font-size: 1.1rem;
-  color: var(--green);
+  font-weight: 500;
+  color: var(--ink);
   text-decoration: none;
-  transition: transform 0.2s;
-  display: inline-block;
+  transition: color 0.2s;
 }
  
-.project-link:hover { transform: translate(2px, -2px); }
+.project-name:hover { color: var(--green); }
+ 
+.project-tagline {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-bottom: 0.35rem;
+}
  
 .project-desc {
   font-size: 0.88rem;
   color: var(--ink-soft);
-  margin-bottom: 0.8rem;
-}
- 
-.project-tags {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  line-height: 1.6;
 }
  
 .tag {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--green);
   background: white;
   border: 1px solid var(--green);
-  padding: 0.2rem 0.6rem;
+  padding: 0.15rem 0.55rem;
   border-radius: 2px;
+  white-space: nowrap;
+}
+
+/* ── PROJECT DETAIL PAGE ───────────────────────────────── */
+.project-back {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: color 0.2s;
+}
+
+.project-back:hover { color: var(--green); }
+
+.project-detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.project-detail h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  line-height: 1.25;
+}
+
+.project-detail-tagline {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-bottom: 2.5rem;
+}
+
+.project-body p {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  margin-bottom: 1.3rem;
+}
+
+.project-links {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.project-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--green);
+  text-decoration: none;
+  border-bottom: 1px solid var(--green);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.project-links a:hover {
+  color: var(--green-light);
+  border-color: var(--green-light);
 }
  
 /* ── CONTACT ───────────────────────────────────────────── */
@@ -269,7 +344,8 @@ footer {
 @media (max-width: 520px) {
   .nav-links { gap: 1rem; }
  
-  .reflection-item {
+  .reflection-item,
+  .project-item {
     grid-template-columns: 1fr;
     gap: 0.3rem;
   }
