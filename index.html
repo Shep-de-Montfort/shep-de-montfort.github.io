@@ -9,11 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
-<body>
- 
+<body id="top">
+
   <header>
     <nav>
-      <span class="nav-name">Shep de Montfort</span>
+      <a href="#top" class="nav-name">Shep de Montfort</a>
       <div class="nav-links">
        <a href="#about">About</a>
        <a href="#projects">Projects</a>
@@ -46,14 +46,14 @@
       <div class="project-list">
 
         <article class="project-item">
-          <span class="project-date">2025&ndash;26</span>
+          <span class="project-date">2023&ndash;present</span>
           <div>
             <div class="project-header">
-              <a href="projects/nightcrawl.html" class="project-name">Nightcrawl</a>
-              <span class="tag">Community &amp; Wellness</span>
+              <a href="projects/bcg.html" class="project-name">Consulting at BCG</a>
+              <span class="tag">Strategy &amp; Operations</span>
             </div>
-            <p class="project-tagline">Pioneering "nightlife fitness"</p>
-            <p class="project-desc">I created a nightlife fitness event in Miami as my second startup.</p>
+            <p class="project-tagline">The start of my professional life</p>
+            <p class="project-desc">I learned how big companies operate, and the process to enact change within them.</p>
           </div>
         </article>
 
@@ -70,14 +70,14 @@
         </article>
 
         <article class="project-item">
-          <span class="project-date">2023&ndash;present</span>
+          <span class="project-date">2025&ndash;26</span>
           <div>
             <div class="project-header">
-              <a href="projects/bcg.html" class="project-name">Consulting at BCG</a>
-              <span class="tag">Strategy &amp; Operations</span>
+              <a href="projects/nightcrawl.html" class="project-name">Nightcrawl</a>
+              <span class="tag">Community &amp; Wellness</span>
             </div>
-            <p class="project-tagline">The start of my professional life</p>
-            <p class="project-desc">I learned how big companies operate, and the process to enact change within them.</p>
+            <p class="project-tagline">Pioneering "nightlife fitness"</p>
+            <p class="project-desc">I created a nightlife fitness event in Miami as my second startup.</p>
           </div>
         </article>
 
@@ -142,30 +142,6 @@
         </article>
 
         <article class="project-item">
-          <span class="project-date">Fall 2018</span>
-          <div>
-            <div class="project-header">
-              <a href="projects/we-the-people.html" class="project-name">We the People</a>
-              <span class="tag">Civics, Policy, &amp; Government</span>
-            </div>
-            <p class="project-tagline">We the People champs</p>
-            <p class="project-desc">My friends and I won our We the People section.</p>
-          </div>
-        </article>
-
-        <article class="project-item">
-          <span class="project-date">Summer 2018</span>
-          <div>
-            <div class="project-header">
-              <a href="projects/boys-state.html" class="project-name">Boys State</a>
-              <span class="tag">Civics, Policy, &amp; Government</span>
-            </div>
-            <p class="project-tagline">Simulating the Nevada state government</p>
-            <p class="project-desc">I was a successful mock lobbyist.</p>
-          </div>
-        </article>
-
-        <article class="project-item">
           <span class="project-date">2017&ndash;19</span>
           <div>
             <div class="project-header">
@@ -190,6 +166,18 @@
         </article>
 
         <article class="project-item">
+          <span class="project-date">Fall 2018</span>
+          <div>
+            <div class="project-header">
+              <a href="projects/we-the-people.html" class="project-name">We the People</a>
+              <span class="tag">Civics, Policy, &amp; Government</span>
+            </div>
+            <p class="project-tagline">We the People champs</p>
+            <p class="project-desc">My friends and I won our We the People section.</p>
+          </div>
+        </article>
+
+        <article class="project-item">
           <span class="project-date">2015&ndash;18</span>
           <div>
             <div class="project-header">
@@ -198,6 +186,18 @@
             </div>
             <p class="project-tagline">Running is so hard</p>
             <p class="project-desc">I was a cross country runner in high school.</p>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <span class="project-date">Summer 2018</span>
+          <div>
+            <div class="project-header">
+              <a href="projects/boys-state.html" class="project-name">Boys State</a>
+              <span class="tag">Civics, Policy, &amp; Government</span>
+            </div>
+            <p class="project-tagline">Simulating the Nevada state government</p>
+            <p class="project-desc">I was a successful mock lobbyist.</p>
           </div>
         </article>
 
@@ -253,6 +253,34 @@
   if (reflections.length > 0) {
     emptyState.style.display = 'none';
   }
-</script> 
+
+  function setupExpandable(listSelector, itemSelector, threshold, label) {
+    const list = document.querySelector(listSelector);
+    if (!list) return;
+    const items = list.querySelectorAll(itemSelector);
+    if (items.length <= threshold) return;
+
+    items.forEach((item, i) => {
+      if (i >= threshold) item.classList.add('is-hidden');
+    });
+
+    const hiddenCount = items.length - threshold;
+    const btn = document.createElement('button');
+    btn.className = 'show-more';
+    btn.type = 'button';
+    btn.textContent = `Show ${hiddenCount} more ${label}`;
+    btn.addEventListener('click', () => {
+      const expanded = list.classList.toggle('is-expanded');
+      items.forEach((item, i) => {
+        if (i >= threshold) item.classList.toggle('is-hidden', !expanded);
+      });
+      btn.textContent = expanded ? 'Show less' : `Show ${hiddenCount} more ${label}`;
+    });
+    list.after(btn);
+  }
+
+  setupExpandable('.project-list', '.project-item', 3, 'projects');
+  setupExpandable('.reflection-list', '.reflection-item', 4, 'reflections');
+</script>
 </body>
 </html>

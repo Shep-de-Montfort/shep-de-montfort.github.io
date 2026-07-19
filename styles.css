@@ -52,7 +52,11 @@ nav {
   font-weight: 500;
   color: var(--green);
   letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: color 0.2s;
 }
+
+.nav-name:hover { color: var(--green-light); }
  
 .nav-links {
   display: flex;
@@ -219,15 +223,11 @@ nav {
 }
  
 .tag {
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--green);
-  background: white;
-  border: 1px solid var(--green);
-  padding: 0.15rem 0.55rem;
-  border-radius: 2px;
+  color: var(--ink-soft);
   white-space: nowrap;
 }
 
@@ -360,6 +360,30 @@ footer {
   color: var(--ink-soft);
   font-style: italic;
   padding: 1.5rem 0;
+}
+
+/* ── SHOW MORE / COLLAPSED LISTS ───────────────────────── */
+.project-item.is-hidden,
+.reflection-item.is-hidden { display: none; }
+
+.show-more {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--green);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--green);
+  padding: 0 0 1px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.show-more:hover {
+  color: var(--green-light);
+  border-color: var(--green-light);
 }
  
 /* ── REDUCED MOTION ────────────────────────────────────── */
